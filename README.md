@@ -1,7 +1,7 @@
 # Kalman filter visualisation
 
 
-Welcome! This repo contains a React project for a pedagogical introduction to the Kalman filter. Check it out at https://tomkimpson.github.io/kalman-filter-viz/. 
+Welcome! This repo contains a React project for a pedagogical introduction to the Kalman filter. Check it out at https://unimelb-nsgw.github.io/kalman-filter-viz/. 
 
 
 If you just want to learn about Kalman filtering, click the link and ignore everything else below. What follows are instructions for running the app locally, making changes, and deploying updates.
