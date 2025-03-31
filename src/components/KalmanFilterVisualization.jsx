@@ -358,33 +358,40 @@ const KalmanFilterVisualization = () => {
       <div className="bg-white p-4 rounded-lg shadow">
         <h3 className="font-bold mb-2 text-left"> Stochastic Pendulum Model</h3>
         <p className="text-sm mt-1 text-left">
-        Consider applyingthe Kalman filter to a noisy pendulum system, cf. examples 3.7 and 5.1 in <a href="https://www.cambridge.org/core/books/bayesian-filtering-and-smoothing/C372FB31C5D9A100F8476C1B23721A67" target="_blank" rel="noopener noreferrer">Bayesian Filtering and Smoothing </a>
-         by S. Särkkä. We want to track the angle from the verticalof the pendulum <MathJax inline>{"\\( \\theta\\)"}</MathJax>, but we only have a noisy measurement of the horizontal position <MathJax inline>{"\\( z\\)"}</MathJax>.
+        Consider applying the Kalman filter to a noisy pendulum system, cf. examples 3.7 and 5.1 in <a href="https://www.cambridge.org/core/books/bayesian-filtering-and-smoothing/C372FB31C5D9A100F8476C1B23721A67" target="_blank" rel="noopener noreferrer">Bayesian Filtering and Smoothing </a>
+         by S. Särkkä. We want to track the angle from the vertical of the pendulum <MathJax inline>{"\\( \\theta\\)"}</MathJax>, but we only have a noisy measurement of the horizontal position <MathJax inline>{"\\( z\\)"}</MathJax>.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <h4 className="font-medium text-blue-600 text-left">Dynamical Model</h4>
-            <p className="text-sm mt-1">
-              <MathJax>{"\\[ \\frac{d^2\\theta}{dt^2} = -g\\sin(\\theta) + w(t) \\]"} </MathJax>
-              <span className="block text-left">where</span>
-              <MathJax>{"\\[ g: \\text{ gravity } (9.81 \\text{ m/s}^2) \\]"}</MathJax>
-              <MathJax>{"\\[ w(t): \\text{ random process noise} \\]"}</MathJax>
-            </p>
+          <div className="space-y-6">
+            <div>
+              
+              <h4 className="font-medium text-blue-600 text-left">Dynamical Model</h4>
+              <p className="text-sm mt-1">
+                <MathJax>{"\\[ \\frac{d^2\\theta}{dt^2} = -g\\sin(\\theta) + w(t) \\]"} </MathJax>
+                <span className="block text-left"> for acceleration due to gravity <MathJax inline>{"\\( g \\text{ } (9.81 \\text{ m/s}^2) \\)"}</MathJax> and random process noise <MathJax inline>{"\\( w(t)\\)"}</MathJax></span> 
+              </p>
+            </div>
+            <div>
+              <h4 className="font-medium text-blue-600 text-left">Measurement Model</h4>
+              <p className="text-sm mt-1">
+                <MathJax>{"\\[ z = \\sin(\\theta) + v(t) \\]"}</MathJax>
+                <span className="block text-left"> for random measurement noise <MathJax inline>{"\\( v(t)\\)"}</MathJax></span> 
+              </p>
+            </div>
           </div>
-          <div>
-            <h4 className="font-medium text-blue-600">Measurement Model</h4>
-            <p className="text-sm mt-1 text-left">
-              <MathJax>{"\\[ z = \\sin(\\theta) + v(t) \\]"}</MathJax>
-              <span className="block text-left">where</span>
-              <MathJax>{"\\[ v(t): \\text{ random measurement noise} \\]"}</MathJax>
-            </p>
+          <div className="flex items-center justify-center">
+            <img 
+              src="/kalman-filter-viz/images/pendulum.png" 
+              alt="Pendulum Diagram"
+              className="w-full max-w-sm max-h-[300px] object-contain rounded-lg"
+            />
           </div>
         </div>
         
         <div className="mt-4">
           <p className="text-sm mt-1 text-left">
-            Please see the <a href="https://github.com/UniMelb-NSGW/SlowKalmanFilter/blob/main/notebooks/NoisyPendulum.ipynb">Jupyter notebook</a> for the additional information and accompanying Python code.
+            Please see the <a href="https://nbviewer.org/github/UniMelb-NSGW/SlowKalmanFilter/blob/main/notebooks/NoisyPendulum.ipynb">Jupyter notebook</a> for the additional information and accompanying Python code.
           </p>
         </div>
       </div>
