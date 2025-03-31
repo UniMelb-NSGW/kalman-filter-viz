@@ -63,7 +63,8 @@ function App() {
                 <div className="rounded-lg bg-blue-50 p-4 border-l-4 border-blue-500">
                   <h4 className="font-medium text-blue-800">1. Prediction Step</h4>
                   <p className="text-gray-700 mt-1 text-left">
-                    The filter predicts the current state based on the previous state using a dynamical model, <MathJax inline>{"\\( p(\\mathbf{x}_k | \\mathbf{x}_{k-1})\\)"}</MathJax>. 
+                    The filter predicts the current state based on the previous state, <MathJax inline>{"\\( p(\\mathbf{x}_k | \\mathbf{x}_{k-1})\\)"}</MathJax>. <br></br >Dynamical model: <MathJax>{"\\[ \\frac{d \\mathbf{x}}{dt} = g(t,\\mathbf{x})+ w(t). \\]"} </MathJax>                  
+
                   </p>
                 </div>
                 
@@ -71,7 +72,8 @@ function App() {
                   <h4 className="font-medium text-blue-800">2. Update Step</h4>
                   <p className="text-gray-700 mt-1 text-left">
                     When a new measurement arrives, the filter compares it to the predicted state
-                    and updates the estimate, <MathJax inline>{"\\( p(\\mathbf{y}_k | \\mathbf{x}_{k})\\)"}</MathJax>. 
+                    and updates the estimate, <MathJax inline>{"\\( p(\\mathbf{y}_k | \\mathbf{x}_{k})\\)"}</MathJax>. <br></br >Measurement model: <MathJax>{"\\[ \\mathbf{y}= h(t,\\mathbf{x})+ v(t). \\]"} </MathJax>                  
+
                   </p>
                 </div>
               </div>
@@ -83,7 +85,7 @@ function App() {
                   className="w-full h-auto max-w-md rounded-lg"
                 />
                 <p className="text-gray-700 text-sm text-center">
-                <MathJax>{"\\[ p(\\mathbf{x}_k | \\mathbf{y}_{1:k}) \\propto \\underbrace {p(\\mathbf{y}_k | \\mathbf{x}_{1:k})}_{\\text{update}} \\int d\\mathbf{x}_{k-1} \\, \\underbrace{p(\\mathbf{x}_k | \\mathbf{x}_{k-1})}_{\\text{predict}} \\, \\underbrace{p(\\mathbf{x}_{k-1} | \\mathbf{y}_{1:k-1})}_{\\text{prior}}. \\]"} </MathJax>                  
+                <MathJax>{"\\[ p(\\mathbf{x}_k | \\mathbf{y}_{1:k}) \\propto \\underbrace {p(\\mathbf{y}_k | \\mathbf{x}_{1:k})}_{\\text{update}} \\int d\\mathbf{x}_{k-1} \\, \\underbrace{p(\\mathbf{x}_k | \\mathbf{x}_{k-1})}_{\\text{predict}} \\, \\underbrace{p(\\mathbf{x}_{k-1} | \\mathbf{y}_{1:k-1})}_{\\text{prior}}. \\]"} </MathJax>        
                 </p>
               </div>
             </div>
